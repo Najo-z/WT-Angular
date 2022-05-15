@@ -5,14 +5,14 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class DataService {
+  result: any;
 
-  result:any;
-
-  constructor(private _http: Http) { }
+  constructor(private _http: Http) {}
 
   getUsers() {
-    return this._http.get("/api/users")
-      .map(result => this.result = result.json().data);
+    return this._http.get('/api/users').map((result) => {
+      console.log(result);
+      this.result = result.json().data;
+    });
   }
-
 }

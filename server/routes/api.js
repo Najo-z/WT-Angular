@@ -26,7 +26,6 @@ let response = {
   message: null,
 };
 
-app.put('/signup');
 app.put('/create_note');
 app.put('/:noteId/add_participant');
 
