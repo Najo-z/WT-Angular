@@ -51,7 +51,11 @@ app.get('/:noteId');
 app.get('/:noteId/participants');
 app.get('/:participantId');
 
-app.post('/login');
+app.post('/signup', (req, res) => {
+  connection((db) => {
+    db.collection('users').insert({ name: 'user' });
+  });
+});
 app.post('/logout');
 
 app.delete('/:noteId');
